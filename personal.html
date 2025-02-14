@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Day Proposal</title>
+<style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffcccc;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            flex-direction: column;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .yes-btn {
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .no-btn {
+            background-color: #333;
+            color: white;
+            position: absolute;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #d00000;
+            display: none;
+        }
+</style>
+</head>
+<body>
+<h1>Will You Be My Valentine? 💖</h1>
+<div class="buttons">
+<button class="yes-btn" onclick="showMessage()">Yes</button>
+<button class="no-btn" id="noBtn" onclick="moveNoButton()">No</button>
+</div>
+<div class="message" id="message">Thank you Pondati! Sorry for being a worst person. You are the love of my life! ❤️</div>
+<script>
+        function showMessage() {
+            document.getElementById('message').style.display = 'block';
+        }
+ 
+        function moveNoButton() {
+            let noBtn = document.getElementById('noBtn');
+            let x = Math.random() * (window.innerWidth - noBtn.clientWidth);
+            let y = Math.random() * (window.innerHeight - noBtn.clientHeight);
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+        }
+</script>
+</body>
+</html>
